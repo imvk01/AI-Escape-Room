@@ -17,7 +17,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 def generate(contents, instruction):
     with genai.Client(api_key=api_key) as client:
         response = client.models.generate_content(
-            model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite"),
+            model=os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite"),
             contents=contents,
             config={"system_instruction": instruction, "max_output_tokens": 768},
         )
